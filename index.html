@@ -8,64 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!--<link href="https://itchief.ru/examples/vendors/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
     <!-- fancyBox JS -->
     <link href="./fancybox/jquery.fancybox.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="./css/post.css">
     <title>Hello, world!</title>
-    <style>
-        @media (min-width: 768px) {
-            .navbar-container {
-                position: sticky;
-                top: 0;
-                overflow-y: auto;
-                height: 100vh;
-            }
 
-            .navbar-container .navbar {
-                align-items: flex-start;
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                height: 100%;
-            }
-
-            .navbar-container .navbar-collapse {
-                align-items: flex-start;
-            }
-
-            .navbar-container .nav {
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
-
-            .navbar-container .navbar-nav {
-                flex-direction: column !important;
-            }
-        }
-        .thumb img {
-            -webkit-filter: grayscale(0);
-            filter: none;
-            border-radius: 5px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 5px;
-        }
-
-        .thumb img:hover {
-            -webkit-filter: grayscale(1);
-            filter: grayscale(1);
-        }
-
-        .thumb {
-            padding: 5px;
-        }
-        .img-responsive {
-            display:block;
-            max-width:100%;
-            height:auto;
-        }
-    </style>
 
 </head>
 <body>
@@ -75,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 col-lg-3 navbar-container bg-light">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="#">Countries</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -170,9 +118,7 @@
             </nav>
         </div>
         <div class="col-md-8 col-lg-9 content-container">
-
-
-           <div class="row">
+          <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-6 thumb">
                 <a data-fancybox="gallery" href="https://itchief.ru/examples/images/for-image-gallery/img_01.jpg">
                     <img class="img-responsive" src="https://itchief.ru/examples/images/for-image-gallery/img_01.jpg" alt="">
@@ -189,7 +135,7 @@
                 </a>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="https://itchief.ru/examples/images/for-image-gallery/img_04.jpg">
+                <a data-fancybox="gallery" href="https://itchief.ru/examples/images/for-image-gallery/img_04.jpg" data-caption="This image has a simple caption">
                     <img class="img-responsive" src="https://itchief.ru/examples/images/for-image-gallery/img_04.jpg" alt="">
                 </a>
             </div>
@@ -208,5 +154,6 @@
 <script src="./js/bootstrap.min.js"></script>
 <!-- fancyBox JS -->
 <script src="./fancybox/jquery.fancybox.min.js"></script>
+<script src="./fancybox/jquery.fancybox.protect.js"></script>
 </body>
 </html>
