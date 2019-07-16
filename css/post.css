@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 200px) {
             .navbar-container {
                 position: sticky;
                 top: 0;
@@ -34,6 +34,7 @@
             background-color: #fff;
             border: 1px solid #ddd;
             padding: 5px;
+			height: 250px;
         }
 
         .thumb img:hover {
@@ -49,3 +50,21 @@
             max-width:100%;
             height:auto;
         }
+		.bottom-right {
+			position: absolute;
+			bottom: 12px;
+			right: 16px;
+			background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+			color: #f1f1f1;
+			width: 25%;
+			padding: 2px;
+		}
+		.bottom-left {
+			position: absolute;
+			bottom: 12px;
+			left: 16px;
+			background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+			color: #f1f1f1;
+			width: 25%;
+			padding: 2px;
+		}		
