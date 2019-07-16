@@ -36,8 +36,21 @@
             padding: 5px;
 			height: 250px;
         }
+		.thumb-fl img {
+            -webkit-filter: grayscale(0);
+            filter: none;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 5px;
+			height: 100px;
+        }
 
         .thumb img:hover {
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+		.thumb-fl img:hover {
             -webkit-filter: grayscale(1);
             filter: grayscale(1);
         }
@@ -45,6 +58,7 @@
         .thumb {
             padding: 5px;
         }
+		
         .img-responsive {
             display:block;
             max-width:100%;
@@ -67,4 +81,12 @@
 			color: #f1f1f1;
 			width: 25%;
 			padding: 2px;
-		}		
+		}
+		.bottom-left-bg {
+			position: absolute;
+			bottom: 6px;
+			left: 26px;
+			color: #f1f1f1;
+			width: 25%;
+			padding: 2px;
+		}
