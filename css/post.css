@@ -81,7 +81,7 @@
 			left: 16px;
 			background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
 			color: #f1f1f1;
-			width: 25%;
+			width: 30%;
 			padding: 2px;
 		}
 		.bottom-left-bg {
@@ -89,7 +89,6 @@
 			bottom: 6px;
 			left: 26px;
 			color: #f1f1f1;
-			width: 25%;
+			width: 30%;
 			padding: 2px;
 		}
-
