@@ -30,11 +30,6 @@
     transition: 0.3s;
 }
 
-.overlay h1 {
-    font-size: 40px;
-    color: #818181;
-}
-
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
@@ -46,11 +41,29 @@
     font-size: 40px;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 450px) {
   .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
+  .overlay a {font-size: 12px}
+  .overlay h1 {
+    font-size: 40px;
+    color: #818181;
+  }
   .overlay .closebtn {
     font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 10px}
+  .overlay h1 {
+    font-size: 20px;
+    color: #818181;
+  }
+  .overlay .closebtn {
+    font-size: 15px;
     top: 10px;
     right: 10px;
   }
