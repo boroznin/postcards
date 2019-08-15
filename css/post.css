@@ -1,95 +1,105 @@
 @media (min-width: 200px) {
-            .navbar-container {
-                position: sticky;
-                top: 0;
-                overflow-y: auto;
-                height: 100vh;
-            }
+    .navbar-container {
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
 
-            .navbar-container .navbar {
-                align-items: flex-start;
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                height: 100%;
-            }
+    .navbar-container .navbar {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 100%;
+    }
 
-            .navbar-container .navbar-collapse {
-                align-items: flex-start;
-            }
+    .navbar-container .navbar-collapse {
+        align-items: flex-start;
+    }
 
-            .navbar-container .nav {
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
+    .navbar-container .nav {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
 
-            .navbar-container .navbar-nav {
-                flex-direction: column !important;
-            }
-        }
-        .thumb img {
-            -webkit-filter: grayscale(0);
-            filter: none;
-            border-radius: 5px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 5px;
-			height: 250px;
-            object-fit: cover;
-        }
-		.thumb-fl img {
-            -webkit-filter: grayscale(0);
-            filter: none;
-            border-radius: 5px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 5px;
-			height: 150px;
-			width: 250px;
-			object-fit: cover;
-        }
+    .navbar-container .navbar-nav {
+        flex-direction: column !important;
+    }
+}
+.thumb img {
+    -webkit-filter: grayscale(0);
+    filter: none;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    height: 250px;
+    object-fit: cover;
+}
+.thumb-fl img {
+    -webkit-filter: grayscale(0);
+    filter: none;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    height: 150px;
+    width: 250px;
+    object-fit: cover;
+}
 
-        .thumb img:hover {
-            -webkit-filter: grayscale(1);
-            filter: grayscale(1);
-        }
-		.thumb-fl img:hover {
-            -webkit-filter: grayscale(1);
-            filter: grayscale(1);
-        }
+.thumb img:hover {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.thumb-fl img:hover {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
 
-        .thumb {
-            padding: 5px;
-        }
-		
-        .img-responsive {
-            display:block;
-            max-width:100%;
-            height:auto;
-        }
-		.bottom-right {
-			position: absolute;
-			bottom: 12px;
-			right: 16px;
-			background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-			color: #f1f1f1;
-			width: 25%;
-			padding: 2px;
-		}
-		.bottom-left {
-			position: absolute;
-			bottom: 12px;
-			left: 16px;
-			background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-			color: #f1f1f1;
-			width: 30%;
-			padding: 2px;
-		}
-		.bottom-left-bg {
-			position: absolute;
-			bottom: 6px;
-			left: 26px;
-			color: #f1f1f1;
-			width: 30%;
-			padding: 2px;
-		}
+.thumb {
+    padding: 5px;
+}
+
+.img-responsive {
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+.bottom-right {
+ position: absolute;
+ bottom: 12px;
+ right: 16px;
+ background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+ color: #f1f1f1;
+ width: 25%;
+ padding: 2px;
+}
+.bottom-left {
+ position: absolute;
+ bottom: 12px;
+ left: 16px;
+ background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+ color: #f1f1f1;
+ width: 30%;
+ padding: 2px;
+}
+.bottom-left-bg {
+ position: absolute;
+ bottom: 6px;
+ left: 26px;
+ color: #f1f1f1;
+ width: 30%;
+ padding: 2px;
+}
+body {
+ background:#f5f5f5;
+}
+li a {
+    font-size: 14px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.pad {
+    padding: 20px 20px 20px 20px;
+}
