@@ -105,3 +105,10 @@ body {
 .pad {
     padding: 5px;
 }
+.content-page {
+		display:none
+}
+
+.content-page-active {
+		display:block
+}
