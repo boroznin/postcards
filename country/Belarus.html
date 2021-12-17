@@ -1,220 +1,843 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="https://static1.postcrossing.com/favicon.ico" />
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="https://static1.postcrossing.com/favicon.ico" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./../css/bootstrap.min.css">
-    <!-- fancyBox JS -->
-    <link href="./../fancybox/jquery.fancybox.min.css" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./../css/bootstrap.min.css">
+        <!-- fancyBox JS -->
+        <link href="./../fancybox/jquery.fancybox.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./../css/post.css">
-    <link rel="stylesheet" href="./../css/flag.css">
-    <title>Alexei's Postcrads - Belarus</title>
+        <script src="./../js/csi.min.js"></script>
+
+        <link rel="stylesheet" href="./../css/post.css">
+        <link rel="stylesheet" href="./../css/flag.css">
+        <title>Alexei's Postcrads - Belarus</title>
 
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-lg-2 navbar-container bg-light">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="./../index.html">Countries</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse menu" id="navbar">
-                    <ul class="nav flex-column menu">
-                        <li class="nav-item"><a class="menu" href="./Argentina.html"><i class="flag flag-AR"></i>Argentina</a></li>
-                        <li class="nav-item"><a class="menu" href="./Australia.html"><i class="flag flag-AU"></i>Australia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Austria.html"><i class="flag flag-AT"></i>Austria</a></li>
-                        <li class="nav-item"><a class="menu" href="./Azerbaijan.html"><i class="flag flag-AZ"></i>Azerbaijan</a></li>
-                        <li class="nav-item"><a class="menu" href="./Belarus.html"><i class="flag flag-BY"></i>Belarus</a></li>
-                        <li class="nav-item"><a class="menu" href="./Belgium.html"><i class="flag flag-BE"></i>Belgium</a></li>
-                        <li class="nav-item"><a class="menu" href="./Brazil.html"><i class="flag flag-BR"></i>Brazil</a></li>
-                        <li class="nav-item"><a class="menu" href="./Bulgaria.html"><i class="flag flag-BG"></i>Bulgaria</a></li>
-                        <li class="nav-item"><a class="menu" href="./Burkina_Faso.html"><i class="flag flag-BF"></i>Burkina Faso</a></li>
-                        <li class="nav-item"><a class="menu" href="./Canada.html"><i class="flag flag-CA"></i>Canada</a></li>
-                        <li class="nav-item"><a class="menu" href="./Chile.html"><i class="flag flag-CL"></i>Chile</a></li>
-                        <li class="nav-item"><a class="menu" href="./China.html"><i class="flag flag-CN"></i>China</a></li>
-                        <li class="nav-item"><a class="menu" href="./Croatia.html"><i class="flag flag-HR"></i>Croatia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Czechia.html"><i class="flag flag-CZ"></i>Czechia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Denmark.html"><i class="flag flag-DK"></i>Denmark</a></li>
-                        <li class="nav-item"><a class="menu" href="./Dominican_Republic.html"><i class="flag flag-DO"></i>Dominican Republic</a></li>
-                        <li class="nav-item"><a class="menu" href="./Estonia.html"><i class="flag flag-EE"></i>Estonia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Finland.html"><i class="flag flag-FI"></i>Finland</a></li>
-                        <li class="nav-item"><a class="menu" href="./France.html"><i class="flag flag-FR"></i>France</a></li>
-                        <li class="nav-item"><a class="menu" href="./Germany.html"><i class="flag flag-DE"></i>Germany</a></li>
-                        <li class="nav-item"><a class="menu" href="./Greece.html"><i class="flag flag-GR"></i>Greece</a></li>
-                        <li class="nav-item"><a class="menu" href="./Guernsey.html"><i class="flag flag-GG"></i>Guernsey</a></li>
-                        <li class="nav-item"><a class="menu" href="./Hong_Kong.html"><i class="flag flag-HK"></i>Hong Kong</a></li>
-                        <li class="nav-item"><a class="menu" href="./Hungary.html"><i class="flag flag-HU"></i>Hungary</a></li>
-                        <li class="nav-item"><a class="menu" href="./Iceland.html"><i class="flag flag-IS"></i>Iceland</a></li>
-                        <li class="nav-item"><a class="menu" href="./India.html"><i class="flag flag-IN"></i>India</a></li>
-                        <li class="nav-item"><a class="menu" href="./Indonesia.html"><i class="flag flag-ID"></i>Indonesia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Ireland.html"><i class="flag flag-IE"></i>Ireland</a></li>
-                        <li class="nav-item"><a class="menu" href="./Israel.html"><i class="flag flag-IL"></i>Israel</a></li>
-                        <li class="nav-item"><a class="menu" href="./Italy.html"><i class="flag flag-IT"></i>Italy</a></li>
-                        <li class="nav-item"><a class="menu" href="./Japan.html"><i class="flag flag-JP"></i>Japan</a></li>
-                        <li class="nav-item"><a class="menu" href="./Kazakhstan.html"><i class="flag flag-KZ"></i>Kazakhstan</a></li>
-                        <li class="nav-item"><a class="menu" href="./Kenya.html"><i class="flag flag-KE"></i>Kenya</a></li>
-                        <li class="nav-item"><a class="menu" href="./Korea_South.html"><i class="flag flag-KR"></i>Korea (South)</a></li>
-                        <li class="nav-item"><a class="menu" href="./Latvia.html"><i class="flag flag-LV"></i>Latvia</a></li>
-                    </ul>
-                    <ul  class="nav flex-column">
-                        <li class="nav-item"><a class="menu" href="./Liechtenstein.html"><i class="flag flag-LI"></i>Liechtenstein</a></li>
-                        <li class="nav-item"><a class="menu" href="./Lithuania.html"><i class="flag flag-LT"></i>Lithuania</a></li>
-                        <li class="nav-item"><a class="menu" href="./Luxembourg.html"><i class="flag flag-LU"></i>Luxembourg</a></li>
-                        <li class="nav-item"><a class="menu" href="./Macao.html"><i class="flag flag-MO"></i>Macao</a></li>
-                        <li class="nav-item"><a class="menu" href="./Malawi.html"><i class="flag flag-MW"></i>Malawi</a></li>
-                        <li class="nav-item"><a class="menu" href="./Malaysia.html"><i class="flag flag-MY"></i>Malaysia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Mexico.html"><i class="flag flag-MX"></i>Mexico</a></li>
-                        <li class="nav-item"><a class="menu" href="./Moldova.html"><i class="flag flag-MD"></i>Moldova</a></li>
-                        <li class="nav-item"><a class="menu" href="./Morocco.html"><i class="flag flag-MA"></i>Morocco</a></li>
-                        <li class="nav-item"><a class="menu" href="./Netherlands.html"><i class="flag flag-NL"></i>Netherlands</a></li>
-                        <li class="nav-item"><a class="menu" href="./New_Zealand.html"><i class="flag flag-NZ"></i>New Zealand</a></li>
-                        <li class="nav-item"><a class="menu" href="./Norway.html"><i class="flag flag-NO"></i>Norway</a></li>
-                        <li class="nav-item"><a class="menu" href="./Pakistan.html"><i class="flag flag-PK"></i>Pakistan</a></li>
-                        <li class="nav-item"><a class="menu" href="./Panama.html"><i class="flag flag-PA"></i>Panama</a></li>
-                        <li class="nav-item"><a class="menu" href="./Peru.html"><i class="flag flag-PE"></i>Peru</a></li>
-                        <li class="nav-item"><a class="menu" href="./Philippines.html"><i class="flag flag-PH"></i>Philippines</a></li>
-                        <li class="nav-item"><a class="menu" href="./Poland.html"><i class="flag flag-PL"></i>Poland</a></li>
-                        <li class="nav-item"><a class="menu" href="./Portugal.html"><i class="flag flag-PT"></i>Portugal</a></li>
-                        <li class="nav-item"><a class="menu" href="./Romania.html"><i class="flag flag-RO"></i>Romania</a></li>
-                        <li class="nav-item"><a class="menu" href="./Russia.html"><i class="flag flag-RU"></i>Russia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Serbia.html"><i class="flag flag-RS"></i>Serbia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Singapore.html"><i class="flag flag-SG"></i>Singapore</a></li>
-                        <li class="nav-item"><a class="menu" href="./Slovakia.html"><i class="flag flag-SK"></i>Slovakia</a></li>
-                        <li class="nav-item"><a class="menu" href="./Slovenia.html"><i class="flag flag-SI"></i>Slovenia</a></li>
-                        <li class="nav-item"><a class="menu" href="./South_Africa.html"><i class="flag flag-ZA"></i>South Africa</a></li>
-                        <li class="nav-item"><a class="menu" href="./Spain.html"><i class="flag flag-ES"></i>Spain</a></li>
-                        <li class="nav-item"><a class="menu" href="./Sweden.html"><i class="flag flag-SE"></i>Sweden</a></li>
-                        <li class="nav-item"><a class="menu" href="./Switzerland.html"><i class="flag flag-CH"></i>Switzerland</a></li>
-                        <li class="nav-item"><a class="menu" href="./Taiwan.html"><i class="flag flag-TW"></i>Taiwan</a></li>
-                        <li class="nav-item"><a class="menu" href="./Thailand.html"><i class="flag flag-TH"></i>Thailand</a></li>
-                        <li class="nav-item"><a class="menu" href="./Trinidad_and_Tobago.html"><i class="flag flag-TT"></i>Trinidad and Tobago</a></li>
-                        <li class="nav-item"><a class="menu" href="./Turkey.html"><i class="flag flag-TR"></i>Turkey</a></li>
-                        <li class="nav-item"><a class="menu" href="./USA.html"><i class="flag flag-US"></i>U.S.A.</a></li>
-                        <li class="nav-item"><a class="menu" href="./Ukraine.html"><i class="flag flag-UA"></i>Ukraine</a></li>
-                        <li class="nav-item"><a class="menu" href="./United_Kingdom.html"><i class="flag flag-GB"></i>United Kingdom</a></li>
-                        <li class="nav-item"><a class="menu" href="./Uzbekistan.html"><i class="flag flag-UZ"></i>Uzbekistan</a></li>
-                    </ul> 
+        <div class="container-fluid">
+            <div class="row">
+                <div data-include="./menu.html"></div>
+                <!-- Content -->
+                <div class="col-md-9 col-lg-10 content-container">
+                   <h1>Belarus</h1>
+                   <div id="uniqueId">
+                     <!-- <div class="row"> -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-184658.jpg" data-caption="Postcard BY-184658">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-184658.jpg" alt="Postcard BY-184658">
+                                <div class="bottom-left">BY-184658</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-209833.jpg" data-caption="Postcard BY-209833">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-209833.jpg" alt="Postcard BY-209833">
+                                <div class="bottom-left">BY-209833</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-235722.jpg" data-caption="Postcard BY-235722">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-235722.jpg" alt="Postcard BY-235722">
+                                <div class="bottom-left">BY-235722</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-247014.jpg" data-caption="Postcard BY-247014">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-247014.jpg" alt="Postcard BY-247014">
+                                <div class="bottom-left">BY-247014</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-281099.jpg" data-caption="Postcard BY-281099">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-281099.jpg" alt="Postcard BY-281099">
+                                <div class="bottom-left">BY-281099</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-291755.jpg" data-caption="Postcard BY-291755">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-291755.jpg" alt="Postcard BY-291755">
+                                <div class="bottom-left">BY-291755</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-335328.jpg" data-caption="Postcard BY-335328">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-335328.jpg" alt="Postcard BY-335328">
+                                <div class="bottom-left">BY-335328</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-356203.jpg" data-caption="Postcard BY-356203">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-356203.jpg" alt="Postcard BY-356203">
+                                <div class="bottom-left">BY-356203</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-409099.jpg" data-caption="Postcard BY-409099">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-409099.jpg" alt="Postcard BY-409099">
+                                <div class="bottom-left">BY-409099</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-425704.jpg" data-caption="Postcard BY-425704">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-425704.jpg" alt="Postcard BY-425704">
+                                <div class="bottom-left">BY-425704</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-425916.jpg" data-caption="Postcard BY-425916">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-425916.jpg" alt="Postcard BY-425916">
+                                <div class="bottom-left">BY-425916</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-490799.jpg" data-caption="Postcard BY-490799">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-490799.jpg" alt="Postcard BY-490799">
+                                <div class="bottom-left">BY-490799</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-510837.jpg" data-caption="Postcard BY-510837">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-510837.jpg" alt="Postcard BY-510837">
+                                <div class="bottom-left">BY-510837</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-543429.jpg" data-caption="Postcard BY-543429">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-543429.jpg" alt="Postcard BY-543429">
+                                <div class="bottom-left">BY-543429</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-579144.jpg" data-caption="Postcard BY-579144">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-579144.jpg" alt="Postcard BY-579144">
+                                <div class="bottom-left">BY-579144</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-635003.jpg" data-caption="Postcard BY-635003">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-635003.jpg" alt="Postcard BY-635003">
+                                <div class="bottom-left">BY-635003</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-661019.jpg" data-caption="Postcard BY-661019">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-661019.jpg" alt="Postcard BY-661019">
+                                <div class="bottom-left">BY-661019</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-684170.jpg" data-caption="Postcard BY-684170">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-684170.jpg" alt="Postcard BY-684170">
+                                <div class="bottom-left">BY-684170</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-719846.jpg" data-caption="Postcard BY-719846">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-719846.jpg" alt="Postcard BY-719846">
+                                <div class="bottom-left">BY-719846</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-756913.jpg" data-caption="Postcard BY-756913">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-756913.jpg" alt="Postcard BY-756913">
+                                <div class="bottom-left">BY-756913</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-792882.jpg" data-caption="Postcard BY-792882">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-792882.jpg" alt="Postcard BY-792882">
+                                <div class="bottom-left">BY-792882</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-817830.jpg" data-caption="Postcard BY-817830">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-817830.jpg" alt="Postcard BY-817830">
+                                <div class="bottom-left">BY-817830</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-851424.jpg" data-caption="Postcard BY-851424">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-851424.jpg" alt="Postcard BY-851424">
+                                <div class="bottom-left">BY-851424</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-855829.jpg" data-caption="Postcard BY-855829">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-855829.jpg" alt="Postcard BY-855829">
+                                <div class="bottom-left">BY-855829</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-872766.jpg" data-caption="Postcard BY-872766">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-872766.jpg" alt="Postcard BY-872766">
+                                <div class="bottom-left">BY-872766</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-880302.jpg" data-caption="Postcard BY-880302">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-880302.jpg" alt="Postcard BY-880302">
+                                <div class="bottom-left">BY-880302</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-883270.jpg" data-caption="Postcard BY-883270">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-883270.jpg" alt="Postcard BY-883270">
+                                <div class="bottom-left">BY-883270</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-920143.jpg" data-caption="Postcard BY-920143">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-920143.jpg" alt="Postcard BY-920143">
+                                <div class="bottom-left">BY-920143</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-938430.jpg" data-caption="Postcard BY-938430">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-938430.jpg" alt="Postcard BY-938430">
+                                <div class="bottom-left">BY-938430</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1043342.jpg" data-caption="Postcard BY-1043342">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1043342.jpg" alt="Postcard BY-1043342">
+                                <div class="bottom-left">BY-1043342</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1052766.jpg" data-caption="Postcard BY-1052766">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1052766.jpg" alt="Postcard BY-1052766">
+                                <div class="bottom-left">BY-1052766</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1100893.jpg" data-caption="Postcard BY-1100893">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1100893.jpg" alt="Postcard BY-1100893">
+                                <div class="bottom-left">BY-1100893</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1127332.jpg" data-caption="Postcard BY-1127332">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1127332.jpg" alt="Postcard BY-1127332">
+                                <div class="bottom-left">BY-1127332</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1138348.jpg" data-caption="Postcard BY-1138348">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1138348.jpg" alt="Postcard BY-1138348">
+                                <div class="bottom-left">BY-1138348</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1194646.jpg" data-caption="Postcard BY-1194646">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1194646.jpg" alt="Postcard BY-1194646">
+                                <div class="bottom-left">BY-1194646</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1198219.jpg" data-caption="Postcard BY-1198219">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1198219.jpg" alt="Postcard BY-1198219">
+                                <div class="bottom-left">BY-1198219</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1235238.jpg" data-caption="Postcard BY-1235238">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1235238.jpg" alt="Postcard BY-1235238">
+                                <div class="bottom-left">BY-1235238</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1304390.jpg" data-caption="Postcard BY-1304390">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1304390.jpg" alt="Postcard BY-1304390">
+                                <div class="bottom-left">BY-1304390</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1349582.jpg" data-caption="Postcard BY-1349582">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1349582.jpg" alt="Postcard BY-1349582">
+                                <div class="bottom-left">BY-1349582</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1372139.jpg" data-caption="Postcard BY-1372139">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1372139.jpg" alt="Postcard BY-1372139">
+                                <div class="bottom-left">BY-1372139</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1405869.jpg" data-caption="Postcard BY-1405869">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1405869.jpg" alt="Postcard BY-1405869">
+                                <div class="bottom-left">BY-1405869</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1413073.jpg" data-caption="Postcard BY-1413073">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1413073.jpg" alt="Postcard BY-1413073">
+                                <div class="bottom-left">BY-1413073</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1456374.jpg" data-caption="Postcard BY-1456374">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1456374.jpg" alt="Postcard BY-1456374">
+                                <div class="bottom-left">BY-1456374</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1482393.jpg" data-caption="Postcard BY-1482393">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1482393.jpg" alt="Postcard BY-1482393">
+                                <div class="bottom-left">BY-1482393</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1516738.jpg" data-caption="Postcard BY-1516738">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1516738.jpg" alt="Postcard BY-1516738">
+                                <div class="bottom-left">BY-1516738</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1525556.jpg" data-caption="Postcard BY-1525556">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1525556.jpg" alt="Postcard BY-1525556">
+                                <div class="bottom-left">BY-1525556</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1527233.jpg" data-caption="Postcard BY-1527233">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1527233.jpg" alt="Postcard BY-1527233">
+                                <div class="bottom-left">BY-1527233</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1545038.jpg" data-caption="Postcard BY-1545038">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1545038.jpg" alt="Postcard BY-1545038">
+                                <div class="bottom-left">BY-1545038</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1551820.jpg" data-caption="Postcard BY-1551820">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1551820.jpg" alt="Postcard BY-1551820">
+                                <div class="bottom-left">BY-1551820</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1589056.jpg" data-caption="Postcard BY-1589056">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1589056.jpg" alt="Postcard BY-1589056">
+                                <div class="bottom-left">BY-1589056</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1591801.jpg" data-caption="Postcard BY-1591801">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1591801.jpg" alt="Postcard BY-1591801">
+                                <div class="bottom-left">BY-1591801</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1617774.jpg" data-caption="Postcard BY-1617774">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1617774.jpg" alt="Postcard BY-1617774">
+                                <div class="bottom-left">BY-1617774</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1632156.jpg" data-caption="Postcard BY-1632156">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1632156.jpg" alt="Postcard BY-1632156">
+                                <div class="bottom-left">BY-1632156</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1645588.jpg" data-caption="Postcard BY-1645588">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1645588.jpg" alt="Postcard BY-1645588">
+                                <div class="bottom-left">BY-1645588</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1702529.jpg" data-caption="Postcard BY-1702529">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1702529.jpg" alt="Postcard BY-1702529">
+                                <div class="bottom-left">BY-1702529</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1751483.jpg" data-caption="Postcard BY-1751483">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1751483.jpg" alt="Postcard BY-1751483">
+                                <div class="bottom-left">BY-1751483</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1794311.jpg" data-caption="Postcard BY-1794311">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1794311.jpg" alt="Postcard BY-1794311">
+                                <div class="bottom-left">BY-1794311</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1797132.jpg" data-caption="Postcard BY-1797132">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1797132.jpg" alt="Postcard BY-1797132">
+                                <div class="bottom-left">BY-1797132</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1853840.jpg" data-caption="Postcard BY-1853840">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1853840.jpg" alt="Postcard BY-1853840">
+                                <div class="bottom-left">BY-1853840</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1865197.jpg" data-caption="Postcard BY-1865197">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1865197.jpg" alt="Postcard BY-1865197">
+                                <div class="bottom-left">BY-1865197</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1874221.jpg" data-caption="Postcard BY-1874221">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1874221.jpg" alt="Postcard BY-1874221">
+                                <div class="bottom-left">BY-1874221</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1896421.jpg" data-caption="Postcard BY-1896421">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1896421.jpg" alt="Postcard BY-1896421">
+                                <div class="bottom-left">BY-1896421</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1902475.jpg" data-caption="Postcard BY-1902475">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1902475.jpg" alt="Postcard BY-1902475">
+                                <div class="bottom-left">BY-1902475</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1913986.jpg" data-caption="Postcard BY-1913986">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1913986.jpg" alt="Postcard BY-1913986">
+                                <div class="bottom-left">BY-1913986</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1921434.jpg" data-caption="Postcard BY-1921434">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1921434.jpg" alt="Postcard BY-1921434">
+                                <div class="bottom-left">BY-1921434</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1945519.jpg" data-caption="Postcard BY-1945519">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1945519.jpg" alt="Postcard BY-1945519">
+                                <div class="bottom-left">BY-1945519</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1945694.jpg" data-caption="Postcard BY-1945694">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1945694.jpg" alt="Postcard BY-1945694">
+                                <div class="bottom-left">BY-1945694</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1961058.jpg" data-caption="Postcard BY-1961058">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1961058.jpg" alt="Postcard BY-1961058">
+                                <div class="bottom-left">BY-1961058</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1968067.jpg" data-caption="Postcard BY-1968067">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1968067.jpg" alt="Postcard BY-1968067">
+                                <div class="bottom-left">BY-1968067</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1989325.jpg" data-caption="Postcard BY-1989325">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1989325.jpg" alt="Postcard BY-1989325">
+                                <div class="bottom-left">BY-1989325</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-1997883.jpg" data-caption="Postcard BY-1997883">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-1997883.jpg" alt="Postcard BY-1997883">
+                                <div class="bottom-left">BY-1997883</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2003907.jpg" data-caption="Postcard BY-2003907">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2003907.jpg" alt="Postcard BY-2003907">
+                                <div class="bottom-left">BY-2003907</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2003929.jpg" data-caption="Postcard BY-2003929">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2003929.jpg" alt="Postcard BY-2003929">
+                                <div class="bottom-left">BY-2003929</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2009569.jpg" data-caption="Postcard BY-2009569">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2009569.jpg" alt="Postcard BY-2009569">
+                                <div class="bottom-left">BY-2009569</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2012600.jpg" data-caption="Postcard BY-2012600">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2012600.jpg" alt="Postcard BY-2012600">
+                                <div class="bottom-left">BY-2012600</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2020817.jpg" data-caption="Postcard BY-2020817">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2020817.jpg" alt="Postcard BY-2020817">
+                                <div class="bottom-left">BY-2020817</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2035261.jpg" data-caption="Postcard BY-2035261">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2035261.jpg" alt="Postcard BY-2035261">
+                                <div class="bottom-left">BY-2035261</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2035792.jpg" data-caption="Postcard BY-2035792">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2035792.jpg" alt="Postcard BY-2035792">
+                                <div class="bottom-left">BY-2035792</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2045751.jpg" data-caption="Postcard BY-2045751">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2045751.jpg" alt="Postcard BY-2045751">
+                                <div class="bottom-left">BY-2045751</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2053047.jpg" data-caption="Postcard BY-2053047">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2053047.jpg" alt="Postcard BY-2053047">
+                                <div class="bottom-left">BY-2053047</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2082433.jpg" data-caption="Postcard BY-2082433">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2082433.jpg" alt="Postcard BY-2082433">
+                                <div class="bottom-left">BY-2082433</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2083523.jpg" data-caption="Postcard BY-2083523">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2083523.jpg" alt="Postcard BY-2083523">
+                                <div class="bottom-left">BY-2083523</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2098216.jpg" data-caption="Postcard BY-2098216">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2098216.jpg" alt="Postcard BY-2098216">
+                                <div class="bottom-left">BY-2098216</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2130696.jpg" data-caption="Postcard BY-2130696">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2130696.jpg" alt="Postcard BY-2130696">
+                                <div class="bottom-left">BY-2130696</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2133040.jpg" data-caption="Postcard BY-2133040">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2133040.jpg" alt="Postcard BY-2133040">
+                                <div class="bottom-left">BY-2133040</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2145002.jpg" data-caption="Postcard BY-2145002">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2145002.jpg" alt="Postcard BY-2145002">
+                                <div class="bottom-left">BY-2145002</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2150773.jpg" data-caption="Postcard BY-2150773">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2150773.jpg" alt="Postcard BY-2150773">
+                                <div class="bottom-left">BY-2150773</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2153754.jpg" data-caption="Postcard BY-2153754">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2153754.jpg" alt="Postcard BY-2153754">
+                                <div class="bottom-left">BY-2153754</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2160986.jpg" data-caption="Postcard BY-2160986">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2160986.jpg" alt="Postcard BY-2160986">
+                                <div class="bottom-left">BY-2160986</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2174413.jpg" data-caption="Postcard BY-2174413">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2174413.jpg" alt="Postcard BY-2174413">
+                                <div class="bottom-left">BY-2174413</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2191335.jpg" data-caption="Postcard BY-2191335">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2191335.jpg" alt="Postcard BY-2191335">
+                                <div class="bottom-left">BY-2191335</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2199786.jpg" data-caption="Postcard BY-2199786">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2199786.jpg" alt="Postcard BY-2199786">
+                                <div class="bottom-left">BY-2199786</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2213806.jpg" data-caption="Postcard BY-2213806">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2213806.jpg" alt="Postcard BY-2213806">
+                                <div class="bottom-left">BY-2213806</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2236942.jpg" data-caption="Postcard BY-2236942">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2236942.jpg" alt="Postcard BY-2236942">
+                                <div class="bottom-left">BY-2236942</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2239062.jpg" data-caption="Postcard BY-2239062">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2239062.jpg" alt="Postcard BY-2239062">
+                                <div class="bottom-left">BY-2239062</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2259062.jpg" data-caption="Postcard BY-2259062">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2259062.jpg" alt="Postcard BY-2259062">
+                                <div class="bottom-left">BY-2259062</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2259075.jpg" data-caption="Postcard BY-2259075">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2259075.jpg" alt="Postcard BY-2259075">
+                                <div class="bottom-left">BY-2259075</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2263390.jpg" data-caption="Postcard BY-2263390">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2263390.jpg" alt="Postcard BY-2263390">
+                                <div class="bottom-left">BY-2263390</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2269548.jpg" data-caption="Postcard BY-2269548">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2269548.jpg" alt="Postcard BY-2269548">
+                                <div class="bottom-left">BY-2269548</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2269555.jpg" data-caption="Postcard BY-2269555">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2269555.jpg" alt="Postcard BY-2269555">
+                                <div class="bottom-left">BY-2269555</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2291415.jpg" data-caption="Postcard BY-2291415">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2291415.jpg" alt="Postcard BY-2291415">
+                                <div class="bottom-left">BY-2291415</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2301230.jpg" data-caption="Postcard BY-2301230">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2301230.jpg" alt="Postcard BY-2301230">
+                                <div class="bottom-left">BY-2301230</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2301385.jpg" data-caption="Postcard BY-2301385">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2301385.jpg" alt="Postcard BY-2301385">
+                                <div class="bottom-left">BY-2301385</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2301605.jpg" data-caption="Postcard BY-2301605">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2301605.jpg" alt="Postcard BY-2301605">
+                                <div class="bottom-left">BY-2301605</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2320214.jpg" data-caption="Postcard BY-2320214">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2320214.jpg" alt="Postcard BY-2320214">
+                                <div class="bottom-left">BY-2320214</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2321791.jpg" data-caption="Postcard BY-2321791">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2321791.jpg" alt="Postcard BY-2321791">
+                                <div class="bottom-left">BY-2321791</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2324147.jpg" data-caption="Postcard BY-2324147">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2324147.jpg" alt="Postcard BY-2324147">
+                                <div class="bottom-left">BY-2324147</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2328802.jpg" data-caption="Postcard BY-2328802">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2328802.jpg" alt="Postcard BY-2328802">
+                                <div class="bottom-left">BY-2328802</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2377259.jpg" data-caption="Postcard BY-2377259">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2377259.jpg" alt="Postcard BY-2377259">
+                                <div class="bottom-left">BY-2377259</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2422680.jpg" data-caption="Postcard BY-2422680">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2422680.jpg" alt="Postcard BY-2422680">
+                                <div class="bottom-left">BY-2422680</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2422691.jpg" data-caption="Postcard BY-2422691">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2422691.jpg" alt="Postcard BY-2422691">
+                                <div class="bottom-left">BY-2422691</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2432976.jpg" data-caption="Postcard BY-2432976">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2432976.jpg" alt="Postcard BY-2432976">
+                                <div class="bottom-left">BY-2432976</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2453559.jpg" data-caption="Postcard BY-2453559">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2453559.jpg" alt="Postcard BY-2453559">
+                                <div class="bottom-left">BY-2453559</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2453945.jpg" data-caption="Postcard BY-2453945">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2453945.jpg" alt="Postcard BY-2453945">
+                                <div class="bottom-left">BY-2453945</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2457448.jpg" data-caption="Postcard BY-2457448">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2457448.jpg" alt="Postcard BY-2457448">
+                                <div class="bottom-left">BY-2457448</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2490626.jpg" data-caption="Postcard BY-2490626">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2490626.jpg" alt="Postcard BY-2490626">
+                                <div class="bottom-left">BY-2490626</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2490939.jpg" data-caption="Postcard BY-2490939">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2490939.jpg" alt="Postcard BY-2490939">
+                                <div class="bottom-left">BY-2490939</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2493610.jpg" data-caption="Postcard BY-2493610">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2493610.jpg" alt="Postcard BY-2493610">
+                                <div class="bottom-left">BY-2493610</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2502668.jpg" data-caption="Postcard BY-2502668">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2502668.jpg" alt="Postcard BY-2502668">
+                                <div class="bottom-left">BY-2502668</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2533868.jpg" data-caption="Postcard BY-2533868">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2533868.jpg" alt="Postcard BY-2533868">
+                                <div class="bottom-left">BY-2533868</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2545697.jpg" data-caption="Postcard BY-2545697">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2545697.jpg" alt="Postcard BY-2545697">
+                                <div class="bottom-left">BY-2545697</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2572900.jpg" data-caption="Postcard BY-2572900">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2572900.jpg" alt="Postcard BY-2572900">
+                                <div class="bottom-left">BY-2572900</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2685326.jpg" data-caption="Postcard BY-2685326">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2685326.jpg" alt="Postcard BY-2685326">
+                                <div class="bottom-left">BY-2685326</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2685330.jpg" data-caption="Postcard BY-2685330">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2685330.jpg" alt="Postcard BY-2685330">
+                                <div class="bottom-left">BY-2685330</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2685344.jpg" data-caption="Postcard BY-2685344">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2685344.jpg" alt="Postcard BY-2685344">
+                                <div class="bottom-left">BY-2685344</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2685346.jpg" data-caption="Postcard BY-2685346">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2685346.jpg" alt="Postcard BY-2685346">
+                                <div class="bottom-left">BY-2685346</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2750853.jpg" data-caption="Postcard BY-2750853">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2750853.jpg" alt="Postcard BY-2750853">
+                                <div class="bottom-left">BY-2750853</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2786883.jpg" data-caption="Postcard BY-2786883">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2786883.jpg" alt="Postcard BY-2786883">
+                                <div class="bottom-left">BY-2786883</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2786903.jpg" data-caption="Postcard BY-2786903">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2786903.jpg" alt="Postcard BY-2786903">
+                                <div class="bottom-left">BY-2786903</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="./../collect/belarus/BY-2786908.jpg" data-caption="Postcard BY-2786908">
+                                <img class="img-fluid w-100" src="./../collect/belarus/BY-2786908.jpg" alt="Postcard BY-2786908">
+                                <div class="bottom-left">BY-2786908</div>
+                            </a>
+                        </div>
+                    <!-- </div> -->
+
                 </div>
-            </nav>
-        </div>
-        <div class="col-md-9 col-lg-10 content-container">
-         <h1>Belarus</h1>
-         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-184658.jpg" data-caption="Postcard BY-184658">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-184658.jpg" alt="Postcard BY-184658">
-                    <div class="bottom-left">BY-184658</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-209833.jpg" data-caption="Postcard BY-209833">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-209833.jpg" alt="Postcard BY-209833">
-                    <div class="bottom-left">BY-209833</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-235722.jpg" data-caption="Postcard BY-235722">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-235722.jpg" alt="Postcard BY-235722">
-                    <div class="bottom-left">BY-235722</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-247014.jpg" data-caption="Postcard BY-247014">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-247014.jpg" alt="Postcard BY-247014">
-                    <div class="bottom-left">BY-247014</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-281099.jpg" data-caption="Postcard BY-281099">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-281099.jpg" alt="Postcard BY-281099">
-                    <div class="bottom-left">BY-281099</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-291755.jpg" data-caption="Postcard BY-291755">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-291755.jpg" alt="Postcard BY-291755">
-                    <div class="bottom-left">BY-291755</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-335328.jpg" data-caption="Postcard BY-335328">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-335328.jpg" alt="Postcard BY-335328">
-                    <div class="bottom-left">BY-335328</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-356203.jpg" data-caption="Postcard BY-356203">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-356203.jpg" alt="Postcard BY-356203">
-                    <div class="bottom-left">BY-356203</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-409099.jpg" data-caption="Postcard BY-409099">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-409099.jpg" alt="Postcard BY-409099">
-                    <div class="bottom-left">BY-409099</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-425704.jpg" data-caption="Postcard BY-425704">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-425704.jpg" alt="Postcard BY-425704">
-                    <div class="bottom-left">BY-425704</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-425916.jpg" data-caption="Postcard BY-425916">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-425916.jpg" alt="Postcard BY-425916">
-                    <div class="bottom-left">BY-425916</div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
-                <a data-fancybox="gallery" href="./../collect/belarus/BY-490799.jpg" data-caption="Postcard BY-490799">
-                    <img class="img-fluid w-100" src="./../collect/belarus/BY-490799.jpg" alt="Postcard BY-490799">
-                    <div class="bottom-left">BY-490799</div>
-                </a>
             </div>
         </div>
-        <nav style="padding-left: 10px; padding-top: 10px;">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="./../index.html">Main Page</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus.html"><b>1</b></a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-2.html">2</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-3.html">3</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-4.html">4</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-5.html">5</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-6.html">6</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-7.html">7</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-8.html">8</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-9.html">9</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-10.html">10</a></li>
-            <li class="page-item"><a class="page-link" href="./Belarus-2.html">Next</a></li>
-          </ul>
-        </nav>        
     </div>
-</div>
-</div>
 
 
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="./../js/bootstrap.min.js"></script>
-<!-- fancyBox JS -->
-<script src="./../fancybox/jquery.fancybox.min.js"></script>
-<script src="./../fancybox/jquery.fancybox.protect.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <!-- fancyBox JS -->
+    <script src="./../fancybox/jquery.fancybox.min.js"></script>
+    <script src="./../fancybox/jquery.fancybox.protect.js"></script>
+
+    <script src="./../js/buzina-pagination.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#uniqueId').buzinaPagination({
+          itemsOnPage:12
+      });
+    });
+</script>
 
 
 </body>
