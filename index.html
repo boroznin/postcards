@@ -261,83 +261,83 @@
 </div>
 
 <script>
-  // Коды стран и их названия на русском
-  const countryNames = {
-    ar: "Аргентина",
-    au: "Австралия",
-    at: "Австрия",
-    az: "Азербайджан",
-    by: "Беларусь",
-    be: "Бельгия",
-    br: "Бразилия",
-    bg: "Болгария",
-    bf: "Буркина-Фасо",
-    ca: "Канада",
-    cl: "Чили",
-    cn: "Китай",
-    hr: "Хорватия",
-    cz: "Чехия",
-    dk: "Дания",
-    do: "Доминиканская Республика",
-    ee: "Эстония",
-    fi: "Финляндия",
-    fr: "Франция",
-    de: "Германия",
-    gr: "Греция",
-    gg: "Гернси",
-    hk: "Гонконг",
-    hu: "Венгрия",
-    is: "Исландия",
-    in: "Индия",
-    id: "Индонезия",
-    ie: "Ирландия",
-    il: "Израиль",
-    it: "Италия",
-    jp: "Япония",
-    kz: "Казахстан",
-    ke: "Кения",
-    kr: "Южная Корея",
-    lv: "Латвия",
-    li: "Лихтенштейн",
-    lt: "Литва",
-    lu: "Люксембург",
-    mo: "Макао",
-    mw: "Малави",
-    my: "Малайзия",
-    mx: "Мексика",
-    md: "Молдова",
-    ma: "Марокко",
-    nl: "Нидерланды",
-    nz: "Новая Зеландия",
-    no: "Норвегия",
-    pk: "Пакистан",
-    pa: "Панама",
-    ph: "Филиппины",
-    pl: "Польша",
-    pt: "Португалия",
-    ro: "Румыния",
-    ru: "Россия",
-    rs: "Сербия",
-    sg: "Сингапур",
-    sk: "Словакия",
-    si: "Словения",
-    za: "ЮАР",
-    es: "Испания",
-    se: "Швеция",
-    ch: "Швейцария",
-    tw: "Тайвань",
-    th: "Таиланд",
-    tt: "Тринидад и Тобаго",
-    tr: "Турция",
-    ua: "Украина",
-    gb: "Великобритания",
-    us: "США",
-    uz: "Узбекистан"
+  // Коды стран + перевод на русский
+  const countryMapping = {
+    ar: { folder: "argentina", name: "Аргентина" },
+    au: { folder: "australia", name: "Австралия" },
+    at: { folder: "austria", name: "Австрия" },
+    az: { folder: "azerbaijan", name: "Азербайджан" },
+    by: { folder: "belarus", name: "Беларусь" },
+    be: { folder: "belgium", name: "Бельгия" },
+    br: { folder: "brazil", name: "Бразилия" },
+    bg: { folder: "bulgaria", name: "Болгария" },
+    bf: { folder: "burkina_faso", name: "Буркина-Фасо" },
+    ca: { folder: "canada", name: "Канада" },
+    cl: { folder: "chile", name: "Чили" },
+    cn: { folder: "china", name: "Китай" },
+    hr: { folder: "croatia", name: "Хорватия" },
+    cz: { folder: "czechia", name: "Чехия" },
+    dk: { folder: "denmark", name: "Дания" },
+    do: { folder: "dominican_republic", name: "Доминиканская Республика" },
+    ee: { folder: "estonia", name: "Эстония" },
+    fi: { folder: "finland", name: "Финляндия" },
+    fr: { folder: "france", name: "Франция" },
+    de: { folder: "germany", name: "Германия" },
+    gr: { folder: "greece", name: "Греция" },
+    gg: { folder: "guernsey", name: "Гернси" },
+    hk: { folder: "hong_kong", name: "Гонконг" },
+    hu: { folder: "hungary", name: "Венгрия" },
+    is: { folder: "iceland", name: "Исландия" },
+    in: { folder: "india", name: "Индия" },
+    id: { folder: "indonesia", name: "Индонезия" },
+    ie: { folder: "ireland", name: "Ирландия" },
+    il: { folder: "israel", name: "Израиль" },
+    it: { folder: "italy", name: "Италия" },
+    jp: { folder: "japan", name: "Япония" },
+    kz: { folder: "kazakhstan", name: "Казахстан" },
+    ke: { folder: "kenya", name: "Кения" },
+    kr: { folder: "korea_south", name: "Южная Корея" },
+    lv: { folder: "latvia", name: "Латвия" },
+    li: { folder: "liechtenstein", name: "Лихтенштейн" },
+    lt: { folder: "lithuania", name: "Литва" },
+    lu: { folder: "luxembourg", name: "Люксембург" },
+    mo: { folder: "macao", name: "Макао" },
+    mw: { folder: "malawi", name: "Малави" },
+    my: { folder: "malaysia", name: "Малайзия" },
+    mx: { folder: "mexico", name: "Мексика" },
+    md: { folder: "moldova", name: "Молдова" },
+    ma: { folder: "morocco", name: "Марокко" },
+    nl: { folder: "netherlands", name: "Нидерланды" },
+    nz: { folder: "new_zealand", name: "Новая Зеландия" },
+    no: { folder: "norway", name: "Норвегия" },
+    pk: { folder: "pakistan", name: "Пакистан" },
+    pa: { folder: "panama", name: "Панама" },
+    ph: { folder: "philippines", name: "Филиппины" },
+    pl: { folder: "poland", name: "Польша" },
+    pt: { folder: "portugal", name: "Португалия" },
+    ro: { folder: "romania", name: "Румыния" },
+    ru: { folder: "russia", name: "Россия" },
+    rs: { folder: "serbia", name: "Сербия" },
+    sg: { folder: "singapore", name: "Сингапур" },
+    sk: { folder: "slovakia", name: "Словакия" },
+    si: { folder: "slovenia", name: "Словения" },
+    za: { folder: "south_afrika", name: "ЮАР" },
+    es: { folder: "spain", name: "Испания" },
+    se: { folder: "sweden", name: "Швеция" },
+    ch: { folder: "switzerland", name: "Швейцария" },
+    tw: { folder: "taiwan", name: "Тайвань" },
+    th: { folder: "thailand", name: "Таиланд" },
+    tt: { folder: "trinidad_and_tobago", name: "Тринидад и Тобаго" },
+    tr: { folder: "turkey", name: "Турция" },
+    ua: { folder: "ukraine", name: "Украина" },
+    gb: { folder: "united_kingdom", name: "Великобритания" },
+    us: { folder: "usa", name: "США" },
+    uz: { folder: "uzbekistan", name: "Узбекистан" }
   };
 
-  const countryCodes = Object.keys(countryNames);
+  const countryCodes = Object.keys(countryMapping);
 
-  let selectedCountry = 'us';
+  let selectedCountryCode = 'ar';
   let currentPage = 1;
   const imagesPerPage = 14;
 
@@ -345,12 +345,12 @@
   let countryImageCounts = {};
 
   function getImagePath(countryCode, filename) {
-    return `img/${countryCode}/${filename}`;
+    return `img/${countryMapping[countryCode].folder}/${filename}`;
   }
 
   async function loadImagesForCountry(countryCode) {
     try {
-      const response = await fetch(`img/${countryCode}/index.json`);
+      const response = await fetch(`img/${countryMapping[countryCode].folder}/index.json`);
       const items = await response.json();
 
       const start = (currentPage - 1) * imagesPerPage;
@@ -362,7 +362,7 @@
       }));
 
       document.getElementById('gallery-title').textContent =
-        `Галерея: ${countryNames[countryCode]} (${items.length} изображений)`;
+        `Галерея: ${countryMapping[countryCode].name} (${items.length} изображений)`;
       countryImageCounts[countryCode] = items.length;
 
       const gallery = document.getElementById('gallery');
@@ -439,11 +439,10 @@
     prevBtn.onclick = () => {
       if (currentPage > 1) {
         currentPage--;
-        loadImagesForCountry(selectedCountry);
+        loadImagesForCountry(selectedCountryCode);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
-
     pagination.appendChild(prevBtn);
 
     function createButton(pageOrEllipsis) {
@@ -463,7 +462,7 @@
         }
         btn.onclick = () => {
           currentPage = pageNum;
-          loadImagesForCountry(selectedCountry);
+          loadImagesForCountry(selectedCountryCode);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         };
       }
@@ -480,11 +479,10 @@
     nextBtn.onclick = () => {
       if (currentPage < totalPages) {
         currentPage++;
-        loadImagesForCountry(selectedCountry);
+        loadImagesForCountry(selectedCountryCode);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
-
     pagination.appendChild(nextBtn);
   }
 
@@ -492,19 +490,20 @@
     const menu = document.getElementById('country-menu');
     menu.innerHTML = '';
 
-    Object.entries(countryNames).forEach(([code, name]) => {
+    countryCodes.forEach(code => {
+      const info = countryMapping[code];
       const li = document.createElement('li');
       const btn = document.createElement('button');
       const count = countryImageCounts[code] || '?';
       const flagUrl = `flags/${code}.png`;
 
-      btn.className = code === selectedCountry ? 'active' : '';
+      btn.className = code === selectedCountryCode ? 'active' : '';
       btn.innerHTML = `
         <span class="flag" style="background-image: url('${flagUrl}')"></span>
-        ${name} (${count})
+        ${info.name} (${count})
       `;
       btn.onclick = () => {
-        selectedCountry = code;
+        selectedCountryCode = code;
         currentPage = 1;
         loadImagesForCountry(code);
         Array.from(menu.querySelectorAll('button')).forEach(b => b.classList.remove('active'));
@@ -556,7 +555,7 @@
     }
   }
 
-  // Листание стрелками ← → и Esc
+  // Листание клавишами ← → и Esc
   document.addEventListener('keydown', e => {
     const modal = document.getElementById('imageModal');
     if (!modal.classList.contains('active')) return;
@@ -572,8 +571,7 @@
 
   // Инициализация
   document.addEventListener('DOMContentLoaded', () => {
-    selectedCountry = 'ar'; // начальная страна — Аргентина
-    loadImagesForCountry(selectedCountry);
+    loadImagesForCountry(selectedCountryCode);
   });
 </script>
 
