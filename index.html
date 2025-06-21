@@ -1,80 +1,510 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="https://static1.postcrossing.com/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Галерея Стран</title>
+  <style>
+    :root {
+      --bg-color: #f3f4f6;
+      --text-color: #1f2937;
+      --accent-color: #3b82f6;
+      --sidebar-width: 250px;
+    }
 
-	<!-- Bootstrap CSS -->
-	 <link rel="stylesheet" href="./css/bootstrap.min.css"> 
-	<!-- fancyBox JS -->
-	<link rel="stylesheet" href="./fancybox/jquery.fancybox.min.css">
-	<!-- owl carousel -->
-	<!-- <link rel="stylesheet" href="./css/owl.carousel.css"> -->
+    * {
+      box-sizing: border-box;
+    }
 
-	<script src="./js/csi.min.js"></script>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      min-height: 100vh;
+    }
 
-	<link rel="stylesheet" href="./css/post.css">
-	<!-- <link rel="stylesheet" href="./css/overlay.css"> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./css/flag.css">
+    aside {
+      width: var(--sidebar-width);
+      background-color: white;
+      padding: 1.5rem;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
 
+    main {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+    }
 
-	<title>Alexei's Postcrads</title>
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
 
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
 
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .pagination button {
+      padding: 0.5rem 0.75rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #e5e7eb;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-size: 0.875rem;
+    }
+
+    .pagination button:hover:not(:disabled) {
+      background-color: #d1d5db;
+    }
+
+    .pagination button.active,
+    .pagination button.bg-blue-500 {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      aside {
+        display: none;
+      }
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      margin-bottom: 0.5rem;
+    }
+
+    nav button {
+      width: 100%;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background-color: #bfdbfe;
+    }
+
+    /* Модальное окно */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .modal-caption {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 2rem;
+      padding: 0 10px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .nav-left {
+      left: -40px;
+    }
+
+    .nav-right {
+      right: -40px;
+    }
+  </style>
 </head>
 <body>
 
-	<div class="container-fluid">
-		<div class="row">
-			<!-- Меню -->
-			<div data-include="./menu.html"></div>
-			<!-- Основной блок -->
-			<div data-include="./recent.html"></div>
-		</div>
-	</div> 
+<aside>
+  <h2>Страны мира</h2>
+  <nav>
+    <ul id="country-menu"></ul>
+  </nav>
+</aside>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<!-- fancyBox JS -->
-	<script src="./fancybox/jquery.fancybox.min.js"></script>
-	<script src="./fancybox/jquery.fancybox.protect.js"></script>
-	<!-- owl carousel -->
-	<!-- <script src="./js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function() {
+<main>
+  <h1 id="gallery-title">Галерея: Аргентина</h1>
+  <div class="gallery" id="gallery"></div>
+  <div class="pagination" id="pagination"></div>
+</main>
 
-			$(".owl-carousel").owlCarousel({
-				lazyLoad : true,
-				items : 5,
-				loop: true,
-				autoplay : true,
-				autoplayTimeout:1000,
-				autoplayHoverPause:true,
+<!-- Модальное окно -->
+<div class="modal" id="imageModal">
+  <button class="modal-close" onclick="closeModal()">×</button>
+  <button class="nav-arrow nav-left" onclick="prevImage()">‹</button>
+  <div class="modal-content">
+    <img id="modalImage" src="" alt=""/>
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+  <button class="nav-arrow nav-right" onclick="nextImage()">›</button>
+</div>
 
-		  	itemsCustom : [[0, 2], [300, 3], [370, 4], [600, 5], [700, 6], [800, 7], [1000, 8], [1200, 11], [1400, 12], [1600, 14], [1900, 16]] // itemsMobile disabled - inherit from itemsTablet option
+<script>
+  const countryIds = [
+    'argentina','australia','austria','azerbaijan',
+    'belarus','belgium','brazil','bulgaria',
+    'burkina_faso','canada','chile','china',
+    'croatia','czechia','denmark','dominican_republic',
+    'estonia','finland','france','germany',
+    'greece','guernsey','hong_kong','hungary',
+    'iceland','india','indonesia','ireland',
+    'israel','italy','japan','kazakhstan',
+    'kenya','korea_south','latvia','liechtenstein',
+    'lithuania','luxembourg','macao','malawi',
+    'malaysia','mexico','moldova','morocco',
+    'netherlands','new_zealand','norway','pakistan',
+    'panama','philippines','poland','portugal',
+    'romania','russia','serbia','singapore',
+    'slovakia','slovenia','south_afrika','spain',
+    'sweden','switzerland','taiwan','thailand',
+    'trinidad_and_tobago','turkey','ukraine',
+    'united_kingdom','usa','uzbekistan'
+  ];
 
-		  });
+  function getCountryName(countryId) {
+    return countryId
+      .replace(/_/g, ' ')
+      .split(' ')
+      .map(w => w[0].toUpperCase() + w.slice(1))
+      .join(' ');
+  }
 
-		});
-	</script>
+  let selectedCountry = 'argentina';
+  let currentPage = 1;
+  const imagesPerPage = 14;
 
-	<script>
-		function openNav() {
-			document.getElementById("myNav").style.height = "100%";
-		}
+  let allImages = [];
 
-		function closeNav() {
-			document.getElementById("myNav").style.height = "0%";
-		}
-	</script>	 -->
+  function getImagePath(countryId, filename) {
+    return `img/${countryId}/${filename}`;
+  }
 
+  async function loadImagesForCountry(countryId) {
+    try {
+      const response = await fetch(`img/${countryId}/index.json`);
+      const items = await response.json();
+
+      const start = (currentPage - 1) * imagesPerPage;
+      const end = Math.min(start + imagesPerPage, items.length);
+
+      allImages = items.map((item, idx) => ({
+        src: getImagePath(countryId, item.filename),
+        caption: item.title || `Изображение ${idx + 1}`
+      }));
+
+      document.getElementById('gallery-title').textContent = `Галерея: ${getCountryName(countryId)}`;
+
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+
+      for (let i = start; i < end; i++) {
+        const data = allImages[i];
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = () => openModal(i);
+
+        card.innerHTML = `
+          <img src="${data.src}" alt="${data.caption}" onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Found'">
+          <div class="card-body">
+            <h3>${data.caption}</h3>
+          </div>
+        `;
+
+        gallery.appendChild(card);
+      }
+
+      renderPagination(items.length);
+    } catch (err) {
+      console.error(`Не удалось загрузить изображения для ${countryId}:`, err);
+    }
+  }
+
+  function renderPagination(totalImages) {
+    const totalPages = Math.ceil(totalImages / imagesPerPage);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    const maxPagesToShow = 7;
+    const sidePages = Math.floor(maxPagesToShow / 2);
+
+    let pages = [];
+
+    if (totalPages <= maxPagesToShow) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      let startPage = Math.max(1, currentPage - sidePages);
+      let endPage = Math.min(totalPages, currentPage + sidePages);
+
+      if (currentPage - sidePages <= 1) {
+        endPage = maxPagesToShow;
+      }
+
+      if (currentPage + sidePages >= totalPages) {
+        startPage = totalPages - maxPagesToShow + 1;
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        pages.push(i);
+      }
+
+      if (endPage < totalPages) {
+        pages.push('...');
+        pages.push(totalPages);
+      }
+
+      if (startPage > 1) {
+        pages.unshift('...');
+        pages.unshift(1);
+      }
+    }
+
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = 'Назад';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.className = 'px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition';
+    prevBtn.onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        loadImagesForCountry(selectedCountry);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    pagination.appendChild(prevBtn);
+
+    function createButton(pageOrEllipsis) {
+      const btn = document.createElement('button');
+      btn.textContent = pageOrEllipsis;
+      btn.className = 'px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition text-sm';
+
+      if (pageOrEllipsis === '...') {
+        btn.disabled = true;
+        btn.style.opacity = 0.6;
+        btn.style.cursor = 'default';
+      } else if (!isNaN(parseInt(pageOrEllipsis))) {
+        const pageNum = parseInt(pageOrEllipsis);
+        if (pageNum === currentPage) {
+          btn.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+          btn.classList.add('bg-blue-500', 'text-white');
+        }
+        btn.onclick = () => {
+          currentPage = pageNum;
+          loadImagesForCountry(selectedCountry);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+      }
+
+      return btn;
+    }
+
+    pages.forEach(p => pagination.appendChild(createButton(p)));
+
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Вперёд';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.className = 'px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition';
+    nextBtn.onclick = () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        loadImagesForCountry(selectedCountry);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    pagination.appendChild(nextBtn);
+  }
+
+  function renderCountriesMenu() {
+    const menu = document.getElementById('country-menu');
+    menu.innerHTML = '';
+    countryIds.forEach(countryId => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = getCountryName(countryId);
+      btn.className = countryId === selectedCountry ? 'active' : '';
+      btn.onclick = () => {
+        selectedCountry = countryId;
+        currentPage = 1;
+        loadImagesForCountry(countryId);
+        Array.from(menu.querySelectorAll('button')).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      };
+      li.appendChild(btn);
+      menu.appendChild(li);
+    });
+  }
+
+  // Модальное окно
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('modalImage');
+    const caption = document.getElementById('modalCaption');
+
+    const data = allImages[currentIndex];
+    img.src = data.src;
+    caption.textContent = data.caption;
+    modal.classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').classList.remove('active');
+  }
+
+  function updateModalImage() {
+    const img = document.getElementById('modalImage');
+    const caption = document.getElementById('modalCaption');
+    const data = allImages[currentIndex];
+    img.src = data.src;
+    caption.textContent = data.caption;
+  }
+
+  function prevImage() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateModalImage();
+    }
+  }
+
+  function nextImage() {
+    if (currentIndex < allImages.length - 1) {
+      currentIndex++;
+      updateModalImage();
+    }
+  }
+
+  // Листание клавишами ← →
+  document.addEventListener('keydown', e => {
+    const modal = document.getElementById('imageModal');
+    if (!modal.classList.contains('active')) return;
+
+    if (e.key === 'ArrowLeft') {
+      prevImage();
+    } else if (e.key === 'ArrowRight') {
+      nextImage();
+    } else if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  // Инициализация
+  renderCountriesMenu();
+  loadImagesForCountry(selectedCountry);
+</script>
 
 </body>
 </html>
