@@ -141,11 +141,23 @@
       border: none;
       cursor: pointer;
       transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     nav button:hover,
     nav button.active {
       background-color: #bfdbfe;
+    }
+
+    .flag {
+      width: 24px;
+      height: 16px;
+      vertical-align: middle;
+      border: 1px solid #ccc;
+      background-size: cover;
+      background-position: center;
     }
 
     /* Модальное окно */
@@ -233,7 +245,7 @@
 </aside>
 
 <main>
-  <h1 id="gallery-title">Галерея: Аргентина</h1>
+  <h1 id="gallery-title">Галерея: Аргентина (загрузка...)</h1>
   <div class="gallery" id="gallery"></div>
   <div class="pagination" id="pagination"></div>
 </main>
@@ -250,40 +262,88 @@
 </div>
 
 <script>
-  const countryIds = [
-    'argentina','australia','austria','azerbaijan',
-    'belarus','belgium','brazil','bulgaria',
-    'burkina_faso','canada','chile','china',
-    'croatia','czechia','denmark','dominican_republic',
-    'estonia','finland','france','germany',
-    'greece','guernsey','hong_kong','hungary',
-    'iceland','india','indonesia','ireland',
-    'israel','italy','japan','kazakhstan',
-    'kenya','korea_south','latvia','liechtenstein',
-    'lithuania','luxembourg','macao','malawi',
-    'malaysia','mexico','moldova','morocco',
-    'netherlands','new_zealand','norway','pakistan',
-    'panama','philippines','poland','portugal',
-    'romania','russia','serbia','singapore',
-    'slovakia','slovenia','south_afrika','spain',
-    'sweden','switzerland','taiwan','thailand',
-    'trinidad_and_tobago','turkey','ukraine',
-    'united_kingdom','usa','uzbekistan'
-  ];
+  // Список стран + перевод на русский
+  const countryNames = {
+    argentina: "Аргентина",
+    australia: "Австралия",
+    austria: "Австрия",
+    azerbaijan: "Азербайджан",
+    belarus: "Беларусь",
+    belgium: "Бельгия",
+    brazil: "Бразилия",
+    bulgaria: "Болгария",
+    burkina_faso: "Буркина-Фасо",
+    canada: "Канада",
+    chile: "Чили",
+    china: "Китай",
+    croatia: "Хорватия",
+    czechia: "Чехия",
+    denmark: "Дания",
+    dominican_republic: "Доминиканская Республика",
+    estonia: "Эстония",
+    finland: "Финляндия",
+    france: "Франция",
+    germany: "Германия",
+    greece: "Греция",
+    guernsey: "Гернси",
+    hong_kong: "Гонконг",
+    hungary: "Венгрия",
+    iceland: "Исландия",
+    india: "Индия",
+    indonesia: "Индонезия",
+    ireland: "Ирландия",
+    israel: "Израиль",
+    italy: "Италия",
+    japan: "Япония",
+    kazakhstan: "Казахстан",
+    kenya: "Кения",
+    korea_south: "Южная Корея",
+    latvia: "Латвия",
+    liechtenstein: "Лихтенштейн",
+    lithuania: "Литва",
+    luxembourg: "Люксембург",
+    macao: "Макао",
+    malawi: "Малави",
+    malaysia: "Малайзия",
+    mexico: "Мексика",
+    moldova: "Молдова",
+    morocco: "Марокко",
+    netherlands: "Нидерланды",
+    new_zealand: "Новая Зеландия",
+    norway: "Норвегия",
+    pakistan: "Пакистан",
+    panama: "Панама",
+    philippines: "Филиппины",
+    poland: "Польша",
+    portugal: "Португалия",
+    romania: "Румыния",
+    russia: "Россия",
+    serbia: "Сербия",
+    singapore: "Сингапур",
+    slovakia: "Словакия",
+    slovenia: "Словения",
+    south_afrika: "ЮАР",
+    spain: "Испания",
+    sweden: "Швеция",
+    switzerland: "Швейцария",
+    taiwan: "Тайвань",
+    thailand: "Таиланд",
+    trinidad_and_tobago: "Тринидад и Тобаго",
+    turkey: "Турция",
+    ukraine: "Украина",
+    united_kingdom: "Великобритания",
+    usa: "США",
+    uzbekistan: "Узбекистан"
+  };
 
-  function getCountryName(countryId) {
-    return countryId
-      .replace(/_/g, ' ')
-      .split(' ')
-      .map(w => w[0].toUpperCase() + w.slice(1))
-      .join(' ');
-  }
+  const countryIds = Object.keys(countryNames);
 
   let selectedCountry = 'argentina';
   let currentPage = 1;
   const imagesPerPage = 14;
 
   let allImages = [];
+  let countryImageCounts = {};
 
   function getImagePath(countryId, filename) {
     return `img/${countryId}/${filename}`;
@@ -299,10 +359,11 @@
 
       allImages = items.map((item, idx) => ({
         src: getImagePath(countryId, item.filename),
-        caption: item.title || `Изображение ${idx + 1}`
+        caption: item.title || `Изображение ${idx + 1}`,
       }));
 
-      document.getElementById('gallery-title').textContent = `Галерея: ${getCountryName(countryId)}`;
+      document.getElementById('gallery-title').textContent = `Галерея: ${countryNames[countryId]} (${items.length} изображений)`;
+      countryImageCounts[countryId] = items.length;
 
       const gallery = document.getElementById('gallery');
       gallery.innerHTML = '';
@@ -324,6 +385,7 @@
       }
 
       renderPagination(items.length);
+      updateCountryMenu();
     } catch (err) {
       console.error(`Не удалось загрузить изображения для ${countryId}:`, err);
     }
@@ -426,14 +488,21 @@
     pagination.appendChild(nextBtn);
   }
 
-  function renderCountriesMenu() {
+  function updateCountryMenu() {
     const menu = document.getElementById('country-menu');
     menu.innerHTML = '';
+
     countryIds.forEach(countryId => {
       const li = document.createElement('li');
       const btn = document.createElement('button');
-      btn.textContent = getCountryName(countryId);
+      const count = countryImageCounts[countryId] || '?';
+      const flagUrl = `https://flagcdn.com/w20/${countryId}.png`;
+
       btn.className = countryId === selectedCountry ? 'active' : '';
+      btn.innerHTML = `
+        <span class="flag" style="background-image: url('${flagUrl}')"></span>
+        ${countryNames[countryId]} (${count})
+      `;
       btn.onclick = () => {
         selectedCountry = countryId;
         currentPage = 1;
@@ -487,7 +556,7 @@
     }
   }
 
-  // Листание клавишами ← →
+  // Листание клавишами ← → и Esc
   document.addEventListener('keydown', e => {
     const modal = document.getElementById('imageModal');
     if (!modal.classList.contains('active')) return;
@@ -502,8 +571,10 @@
   });
 
   // Инициализация
-  renderCountriesMenu();
-  loadImagesForCountry(selectedCountry);
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCountryMenu();
+    loadImagesForCountry(selectedCountry);
+  });
 </script>
 
 </body>
