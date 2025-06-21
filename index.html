@@ -154,10 +154,9 @@
     .flag {
       width: 24px;
       height: 16px;
-      vertical-align: middle;
-      border: 1px solid #ccc;
       background-size: cover;
       background-position: center;
+      flex-shrink: 0;
     }
 
     /* Модальное окно */
@@ -262,108 +261,109 @@
 </div>
 
 <script>
-  // Список стран + перевод на русский
+  // Коды стран и их названия на русском
   const countryNames = {
-    argentina: "Аргентина",
-    australia: "Австралия",
-    austria: "Австрия",
-    azerbaijan: "Азербайджан",
-    belarus: "Беларусь",
-    belgium: "Бельгия",
-    brazil: "Бразилия",
-    bulgaria: "Болгария",
-    burkina_faso: "Буркина-Фасо",
-    canada: "Канада",
-    chile: "Чили",
-    china: "Китай",
-    croatia: "Хорватия",
-    czechia: "Чехия",
-    denmark: "Дания",
-    dominican_republic: "Доминиканская Республика",
-    estonia: "Эстония",
-    finland: "Финляндия",
-    france: "Франция",
-    germany: "Германия",
-    greece: "Греция",
-    guernsey: "Гернси",
-    hong_kong: "Гонконг",
-    hungary: "Венгрия",
-    iceland: "Исландия",
-    india: "Индия",
-    indonesia: "Индонезия",
-    ireland: "Ирландия",
-    israel: "Израиль",
-    italy: "Италия",
-    japan: "Япония",
-    kazakhstan: "Казахстан",
-    kenya: "Кения",
-    korea_south: "Южная Корея",
-    latvia: "Латвия",
-    liechtenstein: "Лихтенштейн",
-    lithuania: "Литва",
-    luxembourg: "Люксембург",
-    macao: "Макао",
-    malawi: "Малави",
-    malaysia: "Малайзия",
-    mexico: "Мексика",
-    moldova: "Молдова",
-    morocco: "Марокко",
-    netherlands: "Нидерланды",
-    new_zealand: "Новая Зеландия",
-    norway: "Норвегия",
-    pakistan: "Пакистан",
-    panama: "Панама",
-    philippines: "Филиппины",
-    poland: "Польша",
-    portugal: "Португалия",
-    romania: "Румыния",
-    russia: "Россия",
-    serbia: "Сербия",
-    singapore: "Сингапур",
-    slovakia: "Словакия",
-    slovenia: "Словения",
-    south_afrika: "ЮАР",
-    spain: "Испания",
-    sweden: "Швеция",
-    switzerland: "Швейцария",
-    taiwan: "Тайвань",
-    thailand: "Таиланд",
-    trinidad_and_tobago: "Тринидад и Тобаго",
-    turkey: "Турция",
-    ukraine: "Украина",
-    united_kingdom: "Великобритания",
-    usa: "США",
-    uzbekistan: "Узбекистан"
+    ar: "Аргентина",
+    au: "Австралия",
+    at: "Австрия",
+    az: "Азербайджан",
+    by: "Беларусь",
+    be: "Бельгия",
+    br: "Бразилия",
+    bg: "Болгария",
+    bf: "Буркина-Фасо",
+    ca: "Канада",
+    cl: "Чили",
+    cn: "Китай",
+    hr: "Хорватия",
+    cz: "Чехия",
+    dk: "Дания",
+    do: "Доминиканская Республика",
+    ee: "Эстония",
+    fi: "Финляндия",
+    fr: "Франция",
+    de: "Германия",
+    gr: "Греция",
+    gg: "Гернси",
+    hk: "Гонконг",
+    hu: "Венгрия",
+    is: "Исландия",
+    in: "Индия",
+    id: "Индонезия",
+    ie: "Ирландия",
+    il: "Израиль",
+    it: "Италия",
+    jp: "Япония",
+    kz: "Казахстан",
+    ke: "Кения",
+    kr: "Южная Корея",
+    lv: "Латвия",
+    li: "Лихтенштейн",
+    lt: "Литва",
+    lu: "Люксембург",
+    mo: "Макао",
+    mw: "Малави",
+    my: "Малайзия",
+    mx: "Мексика",
+    md: "Молдова",
+    ma: "Марокко",
+    nl: "Нидерланды",
+    nz: "Новая Зеландия",
+    no: "Норвегия",
+    pk: "Пакистан",
+    pa: "Панама",
+    ph: "Филиппины",
+    pl: "Польша",
+    pt: "Португалия",
+    ro: "Румыния",
+    ru: "Россия",
+    rs: "Сербия",
+    sg: "Сингапур",
+    sk: "Словакия",
+    si: "Словения",
+    za: "ЮАР",
+    es: "Испания",
+    se: "Швеция",
+    ch: "Швейцария",
+    tw: "Тайвань",
+    th: "Таиланд",
+    tt: "Тринидад и Тобаго",
+    tr: "Турция",
+    ua: "Украина",
+    gb: "Великобритания",
+    us: "США",
+    uz: "Узбекистан"
   };
 
-  const countryIds = Object.keys(countryNames);
+  const countryCodes = Object.keys(countryNames);
 
-  let selectedCountry = 'argentina';
+  let selectedCountry = 'us';
   let currentPage = 1;
   const imagesPerPage = 14;
 
   let allImages = [];
   let countryImageCounts = {};
 
-  function getImagePath(countryId, filename) {
-    return `img/${countryId}/${filename}`;
+  function getImagePath(countryCode, filename) {
+    return `img/${countryCode}/${filename}`;
   }
 
-  async function loadImagesForCountry(countryId) {
+  async function loadImagesForCountry(countryCode) {
     try {
-      const response = await fetch(`img/${countryId}/index.json`);
+      const response = await fetch(`img/${countryCode}/index.json`);
       const items = await response.json();
 
       const start = (currentPage - 1) * imagesPerPage;
       const end = Math.min(start + imagesPerPage, items.length);
 
       allImages = items.map((item, idx) => ({
-        src: getImagePath(countryId, item.filename),
+        src: getImagePath(countryCode, item.filename),
         caption: item.title || `Изображение ${idx + 1}`,
       }));
 
-      document.getElementById('gallery-title').textContent = `Галерея: ${countryNames[countryId]} (${items.length} изображений)`;
-      countryImageCounts[countryId] = items.length;
+      document.getElementById('gallery-title').textContent =
+        `Галерея: ${countryNames[countryCode]} (${items.length} изображений)`;
+      countryImageCounts[countryCode] = items.length;
 
       const gallery = document.getElementById('gallery');
       gallery.innerHTML = '';
@@ -387,7 +387,7 @@
       renderPagination(items.length);
       updateCountryMenu();
     } catch (err) {
-      console.error(`Не удалось загрузить изображения для ${countryId}:`, err);
+      console.error(`Не удалось загрузить изображения для ${countryCode}:`, err);
     }
   }
 
@@ -492,21 +492,21 @@
     const menu = document.getElementById('country-menu');
     menu.innerHTML = '';
 
-    countryIds.forEach(countryId => {
+    Object.entries(countryNames).forEach(([code, name]) => {
       const li = document.createElement('li');
       const btn = document.createElement('button');
-      const count = countryImageCounts[countryId] || '?';
-      const flagUrl = `https://flagcdn.com/w20/${countryId}.png`;
+      const count = countryImageCounts[code] || '?';
+      const flagUrl = `flags/${code}.png`;
 
-      btn.className = countryId === selectedCountry ? 'active' : '';
+      btn.className = code === selectedCountry ? 'active' : '';
       btn.innerHTML = `
         <span class="flag" style="background-image: url('${flagUrl}')"></span>
-        ${countryNames[countryId]} (${count})
+        ${name} (${count})
       `;
       btn.onclick = () => {
-        selectedCountry = countryId;
+        selectedCountry = code;
         currentPage = 1;
-        loadImagesForCountry(countryId);
+        loadImagesForCountry(code);
         Array.from(menu.querySelectorAll('button')).forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       };
@@ -556,7 +556,7 @@
     }
   }
 
-  // Листание клавишами ← → и Esc
+  // Листание стрелками ← → и Esc
   document.addEventListener('keydown', e => {
     const modal = document.getElementById('imageModal');
     if (!modal.classList.contains('active')) return;
@@ -572,7 +572,7 @@
 
   // Инициализация
   document.addEventListener('DOMContentLoaded', () => {
-    updateCountryMenu();
+    selectedCountry = 'ar'; // начальная страна — Аргентина
     loadImagesForCountry(selectedCountry);
   });
 </script>
